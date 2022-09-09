@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:netflix/Domain/core/failure/main_failure.dart';
@@ -34,10 +33,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         return;
       }
       emit(const SearchState(
-          searchResultList: [], 
-          idleList: [], 
-          isLoading: true, 
-          isError: false));
+          searchResultList: [], idleList: [], isLoading: true, isError: false));
       // get trendings
 
       final _result = await _downloadsService.getDownloadsImage();
@@ -47,8 +43,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
             idleList: [],
             isLoading: false,
             isError: true);
-      }, 
-      (List<Downloads> list) {
+      }, (List<Downloads> list) {
         return SearchState(
             searchResultList: [],
             idleList: list,
@@ -67,28 +62,22 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       //call search movie
       log('Searching for ${event.movieQuery}');
       emit(const SearchState(
-          searchResultList: [], 
-          idleList: [], 
-          isLoading: true, 
-          isError: false));
+          searchResultList: [], idleList: [], isLoading: true, isError: false));
       final _result =
           await _searchService.searchMovies(movieQuery: event.movieQuery);
-      final _state =
-          _result.fold((MainFailure f){
-             return const SearchState(
+      final _state = _result.fold((MainFailure f) {
+        return const SearchState(
             searchResultList: [],
             idleList: [],
             isLoading: false,
             isError: true);
-      
-          },
-           (SearchResponse r){
-             return SearchState(
+      }, (SearchResponse r) {
+        return SearchState(
             searchResultList: r.results,
             idleList: [],
             isLoading: false,
             isError: false);
-           });
+      });
       //show to ui
       emit(_state);
     });
