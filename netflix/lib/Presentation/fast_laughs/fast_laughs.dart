@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix/Application/fast_Laugh/fastlaugh_bloc.dart';
 import 'package:netflix/Presentation/fast_laughs/widget/video_listitem.dart';
+import 'package:video_player/video_player.dart';
 
 
 class screenFastLaugh extends StatelessWidget {
@@ -35,7 +36,7 @@ class screenFastLaugh extends StatelessWidget {
                 children: List.generate(state.videosList.length, (index) {
                   return VideoListItemInheritedWidget(
                     widget:
-                        VideoListItem(key: Key(index.toString()), index: index),
+                        VideoListItem(key: Key(index.toString()), index: index,),
                     movieData: state.videosList[index],
                   );
                 }));

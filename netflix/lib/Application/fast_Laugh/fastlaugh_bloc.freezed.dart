@@ -33,6 +33,18 @@ class _$FastlaughEventTearOff {
       id: id,
     );
   }
+
+  PlayVideo playVideo({required int id}) {
+    return PlayVideo(
+      id: id,
+    );
+  }
+
+  PauseVideo pauseVideo({required int id}) {
+    return PauseVideo(
+      id: id,
+    );
+  }
 }
 
 /// @nodoc
@@ -45,6 +57,8 @@ mixin _$FastlaughEvent {
     required TResult Function() initialize,
     required TResult Function(int id) likeVideo,
     required TResult Function(int id) unLikeVideo,
+    required TResult Function(int id) playVideo,
+    required TResult Function(int id) pauseVideo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +66,8 @@ mixin _$FastlaughEvent {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +75,8 @@ mixin _$FastlaughEvent {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +85,8 @@ mixin _$FastlaughEvent {
     required TResult Function(Initialize value) initialize,
     required TResult Function(LikeVideo value) likeVideo,
     required TResult Function(UnLikeVideo value) unLikeVideo,
+    required TResult Function(PlayVideo value) playVideo,
+    required TResult Function(PauseVideo value) pauseVideo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +94,8 @@ mixin _$FastlaughEvent {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +103,8 @@ mixin _$FastlaughEvent {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -145,6 +169,8 @@ class _$Initialize implements Initialize {
     required TResult Function() initialize,
     required TResult Function(int id) likeVideo,
     required TResult Function(int id) unLikeVideo,
+    required TResult Function(int id) playVideo,
+    required TResult Function(int id) pauseVideo,
   }) {
     return initialize();
   }
@@ -155,6 +181,8 @@ class _$Initialize implements Initialize {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
   }) {
     return initialize?.call();
   }
@@ -165,6 +193,8 @@ class _$Initialize implements Initialize {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -179,6 +209,8 @@ class _$Initialize implements Initialize {
     required TResult Function(Initialize value) initialize,
     required TResult Function(LikeVideo value) likeVideo,
     required TResult Function(UnLikeVideo value) unLikeVideo,
+    required TResult Function(PlayVideo value) playVideo,
+    required TResult Function(PauseVideo value) pauseVideo,
   }) {
     return initialize(this);
   }
@@ -189,6 +221,8 @@ class _$Initialize implements Initialize {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
   }) {
     return initialize?.call(this);
   }
@@ -199,6 +233,8 @@ class _$Initialize implements Initialize {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -277,6 +313,8 @@ class _$LikeVideo implements LikeVideo {
     required TResult Function() initialize,
     required TResult Function(int id) likeVideo,
     required TResult Function(int id) unLikeVideo,
+    required TResult Function(int id) playVideo,
+    required TResult Function(int id) pauseVideo,
   }) {
     return likeVideo(id);
   }
@@ -287,6 +325,8 @@ class _$LikeVideo implements LikeVideo {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
   }) {
     return likeVideo?.call(id);
   }
@@ -297,6 +337,8 @@ class _$LikeVideo implements LikeVideo {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
     required TResult orElse(),
   }) {
     if (likeVideo != null) {
@@ -311,6 +353,8 @@ class _$LikeVideo implements LikeVideo {
     required TResult Function(Initialize value) initialize,
     required TResult Function(LikeVideo value) likeVideo,
     required TResult Function(UnLikeVideo value) unLikeVideo,
+    required TResult Function(PlayVideo value) playVideo,
+    required TResult Function(PauseVideo value) pauseVideo,
   }) {
     return likeVideo(this);
   }
@@ -321,6 +365,8 @@ class _$LikeVideo implements LikeVideo {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
   }) {
     return likeVideo?.call(this);
   }
@@ -331,6 +377,8 @@ class _$LikeVideo implements LikeVideo {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
     required TResult orElse(),
   }) {
     if (likeVideo != null) {
@@ -416,6 +464,8 @@ class _$UnLikeVideo implements UnLikeVideo {
     required TResult Function() initialize,
     required TResult Function(int id) likeVideo,
     required TResult Function(int id) unLikeVideo,
+    required TResult Function(int id) playVideo,
+    required TResult Function(int id) pauseVideo,
   }) {
     return unLikeVideo(id);
   }
@@ -426,6 +476,8 @@ class _$UnLikeVideo implements UnLikeVideo {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
   }) {
     return unLikeVideo?.call(id);
   }
@@ -436,6 +488,8 @@ class _$UnLikeVideo implements UnLikeVideo {
     TResult Function()? initialize,
     TResult Function(int id)? likeVideo,
     TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
     required TResult orElse(),
   }) {
     if (unLikeVideo != null) {
@@ -450,6 +504,8 @@ class _$UnLikeVideo implements UnLikeVideo {
     required TResult Function(Initialize value) initialize,
     required TResult Function(LikeVideo value) likeVideo,
     required TResult Function(UnLikeVideo value) unLikeVideo,
+    required TResult Function(PlayVideo value) playVideo,
+    required TResult Function(PauseVideo value) pauseVideo,
   }) {
     return unLikeVideo(this);
   }
@@ -460,6 +516,8 @@ class _$UnLikeVideo implements UnLikeVideo {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
   }) {
     return unLikeVideo?.call(this);
   }
@@ -470,6 +528,8 @@ class _$UnLikeVideo implements UnLikeVideo {
     TResult Function(Initialize value)? initialize,
     TResult Function(LikeVideo value)? likeVideo,
     TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
     required TResult orElse(),
   }) {
     if (unLikeVideo != null) {
@@ -485,6 +545,305 @@ abstract class UnLikeVideo implements FastlaughEvent {
   int get id;
   @JsonKey(ignore: true)
   $UnLikeVideoCopyWith<UnLikeVideo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PlayVideoCopyWith<$Res> {
+  factory $PlayVideoCopyWith(PlayVideo value, $Res Function(PlayVideo) then) =
+      _$PlayVideoCopyWithImpl<$Res>;
+  $Res call({int id});
+}
+
+/// @nodoc
+class _$PlayVideoCopyWithImpl<$Res> extends _$FastlaughEventCopyWithImpl<$Res>
+    implements $PlayVideoCopyWith<$Res> {
+  _$PlayVideoCopyWithImpl(PlayVideo _value, $Res Function(PlayVideo) _then)
+      : super(_value, (v) => _then(v as PlayVideo));
+
+  @override
+  PlayVideo get _value => super._value as PlayVideo;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(PlayVideo(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PlayVideo implements PlayVideo {
+  const _$PlayVideo({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'FastlaughEvent.playVideo(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PlayVideo &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  $PlayVideoCopyWith<PlayVideo> get copyWith =>
+      _$PlayVideoCopyWithImpl<PlayVideo>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function(int id) likeVideo,
+    required TResult Function(int id) unLikeVideo,
+    required TResult Function(int id) playVideo,
+    required TResult Function(int id) pauseVideo,
+  }) {
+    return playVideo(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(int id)? likeVideo,
+    TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
+  }) {
+    return playVideo?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(int id)? likeVideo,
+    TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
+    required TResult orElse(),
+  }) {
+    if (playVideo != null) {
+      return playVideo(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(LikeVideo value) likeVideo,
+    required TResult Function(UnLikeVideo value) unLikeVideo,
+    required TResult Function(PlayVideo value) playVideo,
+    required TResult Function(PauseVideo value) pauseVideo,
+  }) {
+    return playVideo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(LikeVideo value)? likeVideo,
+    TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
+  }) {
+    return playVideo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(LikeVideo value)? likeVideo,
+    TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
+    required TResult orElse(),
+  }) {
+    if (playVideo != null) {
+      return playVideo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PlayVideo implements FastlaughEvent {
+  const factory PlayVideo({required int id}) = _$PlayVideo;
+
+  int get id;
+  @JsonKey(ignore: true)
+  $PlayVideoCopyWith<PlayVideo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PauseVideoCopyWith<$Res> {
+  factory $PauseVideoCopyWith(
+          PauseVideo value, $Res Function(PauseVideo) then) =
+      _$PauseVideoCopyWithImpl<$Res>;
+  $Res call({int id});
+}
+
+/// @nodoc
+class _$PauseVideoCopyWithImpl<$Res> extends _$FastlaughEventCopyWithImpl<$Res>
+    implements $PauseVideoCopyWith<$Res> {
+  _$PauseVideoCopyWithImpl(PauseVideo _value, $Res Function(PauseVideo) _then)
+      : super(_value, (v) => _then(v as PauseVideo));
+
+  @override
+  PauseVideo get _value => super._value as PauseVideo;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(PauseVideo(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PauseVideo implements PauseVideo {
+  const _$PauseVideo({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'FastlaughEvent.pauseVideo(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PauseVideo &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  $PauseVideoCopyWith<PauseVideo> get copyWith =>
+      _$PauseVideoCopyWithImpl<PauseVideo>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function(int id) likeVideo,
+    required TResult Function(int id) unLikeVideo,
+    required TResult Function(int id) playVideo,
+    required TResult Function(int id) pauseVideo,
+  }) {
+    return pauseVideo(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(int id)? likeVideo,
+    TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
+  }) {
+    return pauseVideo?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(int id)? likeVideo,
+    TResult Function(int id)? unLikeVideo,
+    TResult Function(int id)? playVideo,
+    TResult Function(int id)? pauseVideo,
+    required TResult orElse(),
+  }) {
+    if (pauseVideo != null) {
+      return pauseVideo(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(LikeVideo value) likeVideo,
+    required TResult Function(UnLikeVideo value) unLikeVideo,
+    required TResult Function(PlayVideo value) playVideo,
+    required TResult Function(PauseVideo value) pauseVideo,
+  }) {
+    return pauseVideo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(LikeVideo value)? likeVideo,
+    TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
+  }) {
+    return pauseVideo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(LikeVideo value)? likeVideo,
+    TResult Function(UnLikeVideo value)? unLikeVideo,
+    TResult Function(PlayVideo value)? playVideo,
+    TResult Function(PauseVideo value)? pauseVideo,
+    required TResult orElse(),
+  }) {
+    if (pauseVideo != null) {
+      return pauseVideo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PauseVideo implements FastlaughEvent {
+  const factory PauseVideo({required int id}) = _$PauseVideo;
+
+  int get id;
+  @JsonKey(ignore: true)
+  $PauseVideoCopyWith<PauseVideo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

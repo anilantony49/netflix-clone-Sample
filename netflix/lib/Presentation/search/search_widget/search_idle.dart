@@ -93,4 +93,5 @@ class TopSearchItemTile extends StatelessWidget {
       ],
     );
   }
+  
 }

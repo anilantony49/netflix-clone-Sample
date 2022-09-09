@@ -14,9 +14,10 @@ final dummyVideoUrls = [
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
 ];
 ValueNotifier<Set<int>> likedVideosIdsNotifier = ValueNotifier({});
+ValueNotifier<Set<int>> pauseVideosIdsNotifier = ValueNotifier({});
 
 @injectable
 class FastlaughBloc extends Bloc<FastlaughEvent, FastlaughState> {
@@ -56,5 +57,14 @@ class FastlaughBloc extends Bloc<FastlaughEvent, FastlaughState> {
       likedVideosIdsNotifier.value.remove(event.id);
       likedVideosIdsNotifier.notifyListeners();
     });
+    on<PlayVideo>((event, emit) async {
+     pauseVideosIdsNotifier.value.add(event.id);
+     pauseVideosIdsNotifier.notifyListeners();
+    });
+    on<PauseVideo>((event, emit) async {
+      pauseVideosIdsNotifier.value.remove(event.id);
+      pauseVideosIdsNotifier.notifyListeners();
+    });
+    
   }
 }

@@ -6,7 +6,16 @@ class FastlaughEvent with _$FastlaughEvent {
   const factory FastlaughEvent.likeVideo({
     required int id,
   }) = LikeVideo;
+
   const factory FastlaughEvent.unLikeVideo({
     required int id,
   }) = UnLikeVideo;
+  const factory FastlaughEvent.playVideo({
+    required int id,
+  }) = PlayVideo;
+  const factory FastlaughEvent.pauseVideo({
+    required int id,
+  }) = PauseVideo;
+  
+
 }
