@@ -6,8 +6,6 @@ import 'package:netflix/Presentation/search/search_widget/title.dart';
 
 import 'package:netflix/core/constants.dart';
 
-
-
 class searchReasult extends StatelessWidget {
   const searchReasult({Key? key}) : super(key: key);
 
@@ -21,27 +19,23 @@ class searchReasult extends StatelessWidget {
             const searchTilewidget(title: 'Movies & Tv'),
             kheight,
             Expanded(
-              child: BlocBuilder<SearchBloc,SearchState>(
+              child: BlocBuilder<SearchBloc, SearchState>(
                 builder: (context, state) {
-                  
-                return GridView.count(
-                  crossAxisCount: 3,
-                  shrinkWrap: true,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  childAspectRatio: 1 / 1.35,
-                  children: List.generate(
-                    20,
-                    (index) {
-                      final movie = state.searchResultList[index];
-                      return MainCard(
-                        imageUrl:movie.posterImageUrl);
-                    },
-                      ),
-                   
+                  return GridView.count(
+                    crossAxisCount: 3,
+                    shrinkWrap: true,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: 1 / 1.35,
+                    children: List.generate(
+                      20,
+                      (index) {
+                        final movie = state.searchResultList[index];
+                        return MainCard(imageUrl: movie.posterImageUrl);
+                      },
+                    ),
                   );
                 },
-                
               ),
             ),
           ],
@@ -65,4 +59,3 @@ class MainCard extends StatelessWidget {
             )));
   }
 }
- 
