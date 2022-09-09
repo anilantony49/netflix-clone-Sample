@@ -7,7 +7,6 @@ import 'package:netflix/Presentation/widgets/appbar_widget.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/constants.dart';
 
-
 class screenDownloads extends StatelessWidget {
   screenDownloads({Key? key}) : super(key: key);
   final _widgetList = [
@@ -40,10 +39,9 @@ class section2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-    BlocProvider.of<DownloadsBloc>(context)
+      BlocProvider.of<DownloadsBloc>(context)
           .add(const DownloadEvent.getDownloadsImage());
     });
-     
 
     final Size size = MediaQuery.of(context).size;
     return Column(children: [
@@ -59,22 +57,23 @@ class section2 extends StatelessWidget {
         style: TextStyle(color: Colors.grey, fontSize: 16),
       ),
       // kheight,
-   
-        BlocBuilder<DownloadsBloc,DownloadState>(
-          builder: (context, state) {
-          return 
+
+      BlocBuilder<DownloadsBloc, DownloadState>(builder: (context, state) {
+        return
             // if(state.downloads.isEmpty){
             //   return  const Center(child: Text('List is Empty'),);
             // }
-          
-       SizedBox(
+
+            SizedBox(
                 width: size.width,
                 height: 280,
-                
-                    child: 
-                  state.isLoading||state.downloads.isEmpty?const Center (child:  CircularProgressIndicator(strokeWidth: 2,)): Stack(alignment: Alignment.center, children: [
-                    
-                      CircleAvatar(
+                child: state.isLoading || state.downloads.isEmpty
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                      ))
+                    : Stack(alignment: Alignment.center, children: [
+                        CircleAvatar(
                           radius: size.width * .30,
                           backgroundColor: Colors.grey[800],
                         ),
@@ -101,11 +100,8 @@ class section2 extends StatelessWidget {
                           height: 175,
                           width: 130,
                         )
-                      ]
-                      )
-                      );}
-        )
-      
+                      ]));
+      })
     ]);
   }
 }

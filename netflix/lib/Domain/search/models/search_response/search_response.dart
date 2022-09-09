@@ -4,13 +4,12 @@ import 'package:netflix/core/constants.dart';
 part 'search_response.g.dart';
 
 @JsonSerializable()
-class SearchResponse {  
-  
+class SearchResponse {
   @JsonKey(name: 'results')
   List<SearchResultData> results;
 
   SearchResponse({
-    this.results=const[],
+    this.results = const [],
   });
 
   factory SearchResponse.fromJson(Map<String, dynamic> json) {
@@ -30,10 +29,8 @@ class SearchResultData {
 
   @JsonKey(name: 'poster_path')
   String? posterPath;
-  
 
-
- String get posterImageUrl=>'$imageappendUrl$posterPath';
+  String get posterImageUrl => '$imageappendUrl$posterPath';
 
   SearchResultData({
     this.id,
