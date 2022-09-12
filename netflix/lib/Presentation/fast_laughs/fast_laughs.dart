@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix/Application/fast_Laugh/fastlaugh_bloc.dart';
 import 'package:netflix/Presentation/fast_laughs/widget/video_listitem.dart';
-import 'package:video_player/video_player.dart';
 
 
-class screenFastLaugh extends StatelessWidget {
-  const screenFastLaugh({Key? key}) : super(key: key);
+
+class ScreenFastLaugh extends StatelessWidget {
+  const ScreenFastLaugh({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

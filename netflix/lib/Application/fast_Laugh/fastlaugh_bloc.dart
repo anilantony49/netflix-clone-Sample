@@ -14,7 +14,7 @@ final dummyVideoUrls = [
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
 ];
 ValueNotifier<Set<int>> likedVideosIdsNotifier = ValueNotifier({});
 ValueNotifier<Set<int>> pauseVideosIdsNotifier = ValueNotifier({});
@@ -26,7 +26,7 @@ class FastlaughBloc extends Bloc<FastlaughEvent, FastlaughState> {
   ) : super(FastlaughState.initial()) {
     on<Initialize>((event, emit) async {
       // sending loading to ui
-      emit(const  FastlaughState(
+      emit(const FastlaughState(
         videosList: [],
         isLoading: true,
         isError: false,
@@ -35,7 +35,7 @@ class FastlaughBloc extends Bloc<FastlaughEvent, FastlaughState> {
       final _result = await _downloadService.getDownloadsImage();
       final _state = _result.fold((l) {
         return const FastlaughState(
-        videosList: [],
+          videosList: [],
           isLoading: false,
           isError: true,
         );
@@ -58,13 +58,12 @@ class FastlaughBloc extends Bloc<FastlaughEvent, FastlaughState> {
       likedVideosIdsNotifier.notifyListeners();
     });
     on<PlayVideo>((event, emit) async {
-     pauseVideosIdsNotifier.value.add(event.id);
-     pauseVideosIdsNotifier.notifyListeners();
+      pauseVideosIdsNotifier.value.add(event.id);
+      pauseVideosIdsNotifier.notifyListeners();
     });
     on<PauseVideo>((event, emit) async {
       pauseVideosIdsNotifier.value.remove(event.id);
       pauseVideosIdsNotifier.notifyListeners();
     });
-    
   }
 }

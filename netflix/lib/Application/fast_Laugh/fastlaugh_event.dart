@@ -16,6 +16,4 @@ class FastlaughEvent with _$FastlaughEvent {
   const factory FastlaughEvent.pauseVideo({
     required int id,
   }) = PauseVideo;
-  
-
 }
