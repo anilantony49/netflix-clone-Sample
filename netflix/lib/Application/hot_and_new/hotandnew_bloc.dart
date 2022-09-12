@@ -19,33 +19,30 @@ class HotandnewBloc extends Bloc<HotandnewEvent, HotandnewState> {
    */
 
     on<LoadDataInComigSoon>((event, emit) async {
-      
       //send loading to ui
-      emit(const  HotandnewState(
-        commingSoonList: [], 
-        everyOneIsList: [], 
-        isLoading: true, 
-        isError: false));
-        //get data from remote
-      
+      emit(const HotandnewState(
+          commingSoonList: [],
+          everyOneIsList: [],
+          isLoading: true,
+          isError: false));
+      //get data from remote
+
       final _result = await _hotAndNewService.getHotAndNewMovieData();
       //data to state
-    final newState=  _result.fold(
-        (MainFailure failure){
-          return const HotandnewState(
-          commingSoonList: [], 
-          everyOneIsList: [], 
-          isLoading: false, 
-          isError: true);
-        }, 
-        (HotAndNewResp resp) {
-           return  HotandnewState(
-          commingSoonList: resp.results, 
-          everyOneIsList: state.everyOneIsList, 
-          isLoading: false, 
-          isError: false);
-        });
-        emit(newState);
+      final newState = _result.fold((MainFailure failure) {
+        return const HotandnewState(
+            commingSoonList: [],
+            everyOneIsList: [],
+            isLoading: false,
+            isError: true);
+      }, (HotAndNewResp resp) {
+        return HotandnewState(
+            commingSoonList: resp.results,
+            everyOneIsList: state.everyOneIsList,
+            isLoading: false,
+            isError: false);
+      });
+      emit(newState);
     });
 
     /*
@@ -53,32 +50,29 @@ class HotandnewBloc extends Bloc<HotandnewEvent, HotandnewState> {
    */
 
     on<LoadDataInEveryOnesWatching>((event, emit) async {
-       emit(const  HotandnewState(
-        commingSoonList: [], 
-        everyOneIsList: [], 
-        isLoading: true, 
-        isError: false));
-        //get data from remote
-      
+      emit(const HotandnewState(
+          commingSoonList: [],
+          everyOneIsList: [],
+          isLoading: true,
+          isError: false));
+      //get data from remote
+
       final _result = await _hotAndNewService.getHotAndNewTvData();
       //data to state
-    final newState=  _result.fold(
-        (MainFailure failure){
-          return const HotandnewState(
-          commingSoonList: [], 
-          everyOneIsList: [], 
-          isLoading: false, 
-          isError: true);
-        }, 
-        (HotAndNewResp resp) {
-           return  HotandnewState(
-          commingSoonList:state.commingSoonList, 
-          everyOneIsList:resp.results, 
-          isLoading: false, 
-          isError: false);
-        });
-        emit(newState);
+      final newState = _result.fold((MainFailure failure) {
+        return const HotandnewState(
+            commingSoonList: [],
+            everyOneIsList: [],
+            isLoading: false,
+            isError: true);
+      }, (HotAndNewResp resp) {
+        return HotandnewState(
+            commingSoonList: state.commingSoonList,
+            everyOneIsList: resp.results,
+            isLoading: false,
+            isError: false);
+      });
+      emit(newState);
     });
-    
   }
 }

@@ -12,8 +12,8 @@ import 'package:netflix/core/constants.dart';
 import '../../Application/hot_and_new/hotandnew_bloc.dart';
 
 
-class screenNewAndHot extends StatelessWidget {
-  const screenNewAndHot({Key? key}) : super(key: key);
+class ScreenNewAndHot extends StatelessWidget {
+  const ScreenNewAndHot({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -149,17 +149,17 @@ class EveryonesWatchingList extends StatelessWidget {
       child: BlocBuilder<HotandnewBloc, HotandnewState>(
           builder: (context, state) {
         if (state.isLoading) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(
               strokeWidth: 2,
             ),
           );
         } else if (state.isError) {
-          return Center(
+          return const Center(
             child: Text('Error while loading ComingSoon List'),
           );
         } else if (state.everyOneIsList.isEmpty) {
-          return Center(
+          return const Center(
             child: Text('ComingSoon List is empty'),
           );
         } else {
