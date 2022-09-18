@@ -4,7 +4,8 @@ import 'package:netflix/core/constants.dart';
 
 class NumberCard extends StatelessWidget {
   final int index;
-  const NumberCard({Key? key, required this.index}) : super(key: key);
+  final String imageUrl;
+  const NumberCard({Key? key, required this.index, required this.imageUrl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,10 @@ class NumberCard extends StatelessWidget {
               // color: Colors.red,
               decoration: BoxDecoration(
                   borderRadius: kRadius10,
-                  image: const DecorationImage(
+                  image:  DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://sm.ign.com/t/ign_in/gallery/s/spider-man/spider-man-far-from-home-official-movie-posters_epch.1080.jpg"))),
+                         imageUrl))),
             ),
           ],
         ),
