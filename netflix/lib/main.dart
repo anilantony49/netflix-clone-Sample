@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:netflix/Application/downloads/downloads_bloc.dart';
-
-
 import 'package:netflix/Domain/core/di/injectable.dart';
 import 'package:netflix/Presentation/main_page/widgets/screen_main_page.dart';
 import 'package:netflix/core/colors/colors.dart';
-
 import 'Application/Home/home_bloc.dart';
 import 'Application/fast_Laugh/fastlaugh_bloc.dart';
 import 'Application/hot_and_new/hotandnew_bloc.dart';

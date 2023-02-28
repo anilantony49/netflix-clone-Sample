@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix/Application/downloads/downloads_bloc.dart';
@@ -38,7 +37,7 @@ class section2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<DownloadsBloc>(context)
           .add(const DownloadEvent.getDownloadsImage());
     });
