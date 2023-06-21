@@ -12,7 +12,7 @@ import 'Application/search/search_bloc.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
- await configureInjucton();
+  await configureInjucton();
   runApp(const MyApp());
 }
 
@@ -24,24 +24,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-      BlocProvider(create: (ctx)=> getIt<DownloadsBloc>()),
-       BlocProvider(create:(ctx)=> getIt<SearchBloc>()),
-        BlocProvider(create:(ctx)=> getIt<FastlaughBloc>()),
-         BlocProvider(create:(ctx)=> getIt<HotandnewBloc>()),
-          BlocProvider(create:(ctx)=> getIt<HomeBloc>()),
+        BlocProvider(create: (ctx) => getIt<DownloadsBloc>()),
+        BlocProvider(create: (ctx) => getIt<SearchBloc>()),
+        BlocProvider(create: (ctx) => getIt<FastlaughBloc>()),
+        BlocProvider(create: (ctx) => getIt<HotandnewBloc>()),
+        BlocProvider(create: (ctx) => getIt<HomeBloc>()),
       ],
       child: MaterialApp(
         title: 'Netflix App',
-        debugShowCheckedModeBanner:false,
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             scaffoldBackgroundColor: backGroundColor,
             appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
-            // fontFamily: GoogleFonts.montserrat().fontFamily,
-            primarySwatch: Colors.blue,
-            backgroundColor: Colors.black,
-            textTheme: const TextTheme(
-                bodyText1: TextStyle(color: Colors.white),
-                bodyText2: TextStyle(color: Colors.white))),
+
+      textTheme: const TextTheme(
+         bodyLarge: TextStyle(color: Colors.white),
+         bodyMedium: TextStyle(color: Colors.white)
+      ),
+
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+                .copyWith(background: Colors.black)),
         home: ScreenMainPage(),
       ),
     );

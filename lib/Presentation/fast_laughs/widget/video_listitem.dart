@@ -38,14 +38,14 @@ class VideoListItem extends StatelessWidget {
     final videoUrl = dummyVideoUrls[index % dummyVideoUrls.length];
     return Stack(
       children: [
-        FastLaughVideoPlayer(VideoUrl: videoUrl, onStateChanged: (bool) {}),
+        FastLaughVideoPlayer(videoUrl: videoUrl, onStateChanged: (bool) {}),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           child: Align(
             alignment: Alignment.centerRight,
             child: Column(
               //  crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
@@ -58,8 +58,8 @@ class VideoListItem extends StatelessWidget {
                 ),
                 ValueListenableBuilder(
                     valueListenable: likedVideosIdsNotifier,
-                    builder: (BuildContext c, Set<int> newLikedListIds,
-                        Widget? _) {
+                    builder:
+                        (BuildContext c, Set<int> newLikedListIds, Widget? _) {
                       final _index = index;
                       if (newLikedListIds.contains(_index)) {
                         return GestureDetector(
@@ -75,7 +75,7 @@ class VideoListItem extends StatelessWidget {
                           ),
                         );
                       }
-          
+
                       return GestureDetector(
                         onTap: () {
                           // BlocProvider.of<FastlaughBloc>(context)
@@ -93,10 +93,9 @@ class VideoListItem extends StatelessWidget {
                 GestureDetector(
                     onTap: () {
                       log('share clicked');
-                      final movieName =
-                          VideoListItemInheritedWidget.of(context)
-                              ?.movieData
-                              .title;
+                      final movieName = VideoListItemInheritedWidget.of(context)
+                          ?.movieData
+                          .title;
                       log(movieName.toString());
                       if (movieName != null) {
                         Share.share(movieName);
@@ -143,10 +142,10 @@ class VideoActionsWidget extends StatelessWidget {
 }
 
 class FastLaughVideoPlayer extends StatefulWidget {
-  final String VideoUrl;
+  final String videoUrl;
   final void Function(bool isPlayeing) onStateChanged;
   const FastLaughVideoPlayer(
-      {Key? key, required this.VideoUrl, required this.onStateChanged})
+      {Key? key, required this.videoUrl, required this.onStateChanged})
       : super(key: key);
 
   @override
@@ -157,10 +156,9 @@ class _FastLaughVideoPlayerState extends State<FastLaughVideoPlayer> {
   late VideoPlayerController _videoPlayerController;
   bool isMusicOn = true;
 
-
   @override
   void initState() {
-    _videoPlayerController = VideoPlayerController.network(widget.VideoUrl);
+    _videoPlayerController = VideoPlayerController.network(widget.videoUrl);
     _videoPlayerController.initialize().then((value) {
       setState(() {});
       _videoPlayerController.play();
@@ -186,62 +184,63 @@ class _FastLaughVideoPlayerState extends State<FastLaughVideoPlayer> {
                   ),
                 ),
         ),
-         GestureDetector(
-          
-          onTap: (){
-            setState(() {
-               if (_videoPlayerController.value.isPlaying) {
-              _videoPlayerController.pause();
-            } else {
-              // If the video is paused, play it.
-              _videoPlayerController.play();
-            }
-            });
-            // _videoPlayerController.value.isPlaying ? _videoPlayerController.pause() : _videoPlayerController.play();
-          },
-           child: Padding(
-            padding: const EdgeInsetsDirectional.all(10),
-             child: Icon(
-                 _videoPlayerController.value.isPlaying ? Icons.pause : Icons.play_arrow,
-                size: 50,color: Colors.white.withOpacity(.5),),
-               )
-        
-        ),
+        GestureDetector(
+            onTap: () {
+              setState(() {
+                if (_videoPlayerController.value.isPlaying) {
+                  _videoPlayerController.pause();
+                } else {
+                  // If the video is paused, play it.
+                  _videoPlayerController.play();
+                }
+              });
+              // _videoPlayerController.value.isPlaying ? _videoPlayerController.pause() : _videoPlayerController.play();
+            },
+            child: Padding(
+              padding: const EdgeInsetsDirectional.all(10),
+              child: Icon(
+                _videoPlayerController.value.isPlaying
+                    ? Icons.pause
+                    : Icons.play_arrow,
+                size: 50,
+                color: Colors.white.withOpacity(.5),
+              ),
+            )),
         Align(
           alignment: Alignment.bottomLeft,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: CircleAvatar(
-                     backgroundColor: Colors.black.withOpacity(.1),
-                    radius: 30,
+              backgroundColor: Colors.black.withOpacity(.1),
+              radius: 30,
               child: IconButton(
-                    onPressed: () {
-                      soundToggle();
-                    },
-                    icon: Icon(
-                      isMusicOn == true ? Icons.volume_up : Icons.volume_off,
-                     size: 25,
-                    )),
+                  onPressed: () {
+                    soundToggle();
+                  },
+                  icon: Icon(
+                    isMusicOn == true ? Icons.volume_up : Icons.volume_off,
+                    size: 25,
+                  )),
             ),
           ),
         ),
-                    //  GestureDetector(
-                    //   onTap: (){
-                    //     setState(() {
-                    //       if (_videoPlayerController.value.isPlaying)  {
-                    //       _videoPlayerController.setVolume(1);
-                    //   } else {
-                              
-                    //   _videoPlayerController.setVolume(0);
-                    //    }
-                    //     });
-                    //   },
-                    //    child: Icon(
-                    //    _videoPlayerController.value.isPlaying ? Icons.volume_up : Icons.volume_off,
-                    //    color: Colors.white,
-                    //      size: 30.0,
-                    //       ),
-                    //    )
+        //  GestureDetector(
+        //   onTap: (){
+        //     setState(() {
+        //       if (_videoPlayerController.value.isPlaying)  {
+        //       _videoPlayerController.setVolume(1);
+        //   } else {
+
+        //   _videoPlayerController.setVolume(0);
+        //    }
+        //     });
+        //   },
+        //    child: Icon(
+        //    _videoPlayerController.value.isPlaying ? Icons.volume_up : Icons.volume_off,
+        //    color: Colors.white,
+        //      size: 30.0,
+        //       ),
+        //    )
       ],
     );
   }
@@ -253,11 +252,11 @@ class _FastLaughVideoPlayerState extends State<FastLaughVideoPlayer> {
   }
 
   void soundToggle() {
-setState(() {
-  isMusicOn == true
-      ? _videoPlayerController.setVolume(0.0)
-      : _videoPlayerController.setVolume(1.0);
-   isMusicOn =!isMusicOn;
-});
+    setState(() {
+      isMusicOn == true
+          ? _videoPlayerController.setVolume(0.0)
+          : _videoPlayerController.setVolume(1.0);
+      isMusicOn = !isMusicOn;
+    });
   }
 }

@@ -52,19 +52,19 @@ class FastlaughBloc extends Bloc<FastlaughEvent, FastlaughState> {
     });
     on<LikeVideo>((event, emit) async {
       likedVideosIdsNotifier.value.add(event.id);
-      likedVideosIdsNotifier.notifyListeners();
+       likedVideosIdsNotifier.notifyListeners();
     });
     on<UnLikeVideo>((event, emit) async {
       likedVideosIdsNotifier.value.remove(event.id);
-      likedVideosIdsNotifier.notifyListeners();
+       likedVideosIdsNotifier.notifyListeners();
     });
     on<PlayVideo>((event, emit) async {
       pauseVideosIdsNotifier.value.add(event.id);
-      pauseVideosIdsNotifier.notifyListeners();
+     pauseVideosIdsNotifier.notifyListeners();
     });
     on<PauseVideo>((event, emit) async {
       pauseVideosIdsNotifier.value.remove(event.id);
-      pauseVideosIdsNotifier.notifyListeners();
+       pauseVideosIdsNotifier.notifyListeners();
     });
   }
 }
