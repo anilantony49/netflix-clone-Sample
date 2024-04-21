@@ -46,4 +46,4 @@ app.*.map.json
 /android/app/release
 
 # ignore files(api key)
-lib\Infarstructure\api_key.dart
+Infarstructure\api_key.dart
