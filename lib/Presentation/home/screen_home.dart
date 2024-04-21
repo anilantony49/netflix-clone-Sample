@@ -118,6 +118,9 @@ class ScreenHome extends StatelessWidget {
                           ? AnimatedContainer(
                               duration: const Duration(milliseconds: 1000),
                               child: Container(
+                                width: double.infinity,
+                                height: 90,
+                                color: Colors.black.withOpacity(.8),
                                 child: Column(
                                   children: [
                                     Row(
@@ -158,9 +161,6 @@ class ScreenHome extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                width: double.infinity,
-                                height: 90,
-                                color: Colors.black.withOpacity(.8),
                               ),
                             )
                           : kheight,
